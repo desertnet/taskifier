@@ -1,0 +1,25 @@
+{
+  "name": "email-to-task",
+  "version": "0.0.1",
+  "description": "Transparently turn emails sent to a support address into trackable tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/desertnet/email-to-task"
+  },
+  "author": "Eric McCarthy <eric@limulus.net> (http://www.limulus.net/)",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/desertnet/email-to-task/issues"
+  },
+  "homepage": "https://github.com/desertnet/email-to-task",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "dependencies": {
+    "mbox-stream": "^1.0.0"
+  }
+}
