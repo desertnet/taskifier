@@ -20,6 +20,7 @@
     "mocha": "^2.0.1"
   },
   "dependencies": {
+    "mailparser": "^0.4.6",
     "mbox-stream": "^1.0.0"
   }
 }
