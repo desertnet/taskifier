@@ -17,11 +17,12 @@
   },
   "homepage": "https://github.com/desertnet/email-to-task",
   "devDependencies": {
-    "mocha": "^2.0.1"
+    "mocha": "^2.0.1",
+    "temp": "^0.8.1"
   },
   "dependencies": {
     "mailparser": "^0.4.6",
-    "mbox-stream": "^1.0.0",
+    "node-mbox": "^0.1.0",
     "uuid": "^2.0.1"
   }
 }
