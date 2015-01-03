@@ -16,7 +16,7 @@ describe("Email", function () {
     email = new Email()
   })
 
-  describe("initializeFromEmailText", function () {
+  describe("initializeFromEmailText()", function () {
     it("should intialize the object with data from a raw text email", function (done) {
       email.initializeFromEmailText(helloEmail, function (err) {
         assert.ifError(err)
@@ -31,6 +31,22 @@ describe("Email", function () {
         assert.ok(err)
         return done()
       })
+    })
+  })
+
+  describe("toJSON()", function () {
+    beforeEach(function (done) {
+      email.initializeFromEmailText(helloEmail, function (err) {
+        assert.ifError(err)
+        return done()
+      })
+    })
+
+    it("should return the JSON data for the email", function () {
+      var data = email.toJSON()
+      assert.strictEqual(data.id, helloEmailId)
+      assert.strictEqual(data.from.address, "eric@limulus.net")
+      assert.strictEqual(data.from.name, "Eric McCarthy")
     })
   })
 })
