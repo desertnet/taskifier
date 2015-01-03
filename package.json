@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "mailparser": "^0.4.6",
-    "mbox-stream": "^1.0.0"
+    "mbox-stream": "^1.0.0",
+    "uuid": "^2.0.1"
   }
 }

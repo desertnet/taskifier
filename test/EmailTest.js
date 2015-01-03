@@ -10,6 +10,7 @@ describe("Email", function () {
   var email
   var helloEmail = fs.readFileSync(path.join(__dirname, "data", "hello.eml"))
   var helloEmailId = "<96A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>"
+  var headerlessEmail = fs.readFileSync(path.join(__dirname, "data", "headerless.txt"))
 
   beforeEach(function () {
     email = new Email()
@@ -21,6 +22,13 @@ describe("Email", function () {
         assert.ifError(err)
         assert.deepEqual(email.from(), {address:"eric@limulus.net",name:"Eric McCarthy"})
         assert.strictEqual(email.id(), helloEmailId)
+        return done()
+      })
+    })
+
+    it("should report an error when given bad data", function (done) {
+      email.initializeFromEmailText(headerlessEmail, function (err) {
+        assert.ok(err)
         return done()
       })
     })
