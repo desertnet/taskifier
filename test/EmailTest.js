@@ -45,8 +45,6 @@ describe("Email", function () {
     it("should return the JSON data for the email", function () {
       var data = email.toJSON()
       assert.strictEqual(data.id, helloEmailId)
-      assert.strictEqual(data.from.address, "eric@limulus.net")
-      assert.strictEqual(data.from.name, "Eric McCarthy")
     })
   })
 })

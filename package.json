@@ -21,6 +21,7 @@
     "temp": "^0.8.1"
   },
   "dependencies": {
+    "level": "^0.18.0",
     "mailparser": "^0.4.6",
     "node-mbox": "^0.1.0",
     "uuid": "^2.0.1"
