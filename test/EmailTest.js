@@ -9,7 +9,7 @@ var Email = require("../lib/Email.js")
 describe("Email", function () {
   var email
   var helloEmail = fs.readFileSync(path.join(__dirname, "data", "hello.eml"))
-  var helloEmailId = "<96A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>"
+  var helloEmailId = "<96A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>".toLowerCase()
   var headerlessEmail = fs.readFileSync(path.join(__dirname, "data", "headerless.txt"))
 
   beforeEach(function () {
