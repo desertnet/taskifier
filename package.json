@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "level": "^0.18.0",
-    "level-ws": "0.0.0",
     "mailparser": "^0.4.7",
     "node-mbox": "^0.1.0",
     "through2": "^0.6.3",
