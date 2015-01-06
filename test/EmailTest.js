@@ -47,4 +47,17 @@ describe("Email", function () {
       assert.strictEqual(data.id, helloEmailId)
     })
   })
+
+  describe("references()", function () {
+    it("should return an array of message ids from the References header", function (done) {
+      email.initializeFromEmailText(helloEmail, function (err, helloEmail) {
+        assert.ifError(err)
+        assert.deepEqual(helloEmail.references(), [
+          "<86A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>",
+          "<76A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>"
+        ])
+        return done()
+      })
+    })
+  })
 })

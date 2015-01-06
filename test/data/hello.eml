@@ -8,6 +8,7 @@ From: Eric McCarthy <eric@limulus.net>
 Content-Type: multipart/alternative; boundary="Apple-Mail=_A66762F6-5925-49FE-9659-C2F4A7801F35"
 Subject: A Test Message :)
 Message-Id: <96A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>
+References: <86A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net> <76A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>
 Date: Fri, 2 Jan 2015 16:18:41 -0700
 To: Eric McCarthy <eric@limulus.net>
 Mime-Version: 1.0 (Mac OS X Mail 8.1 \(1993\))
