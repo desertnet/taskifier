@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+"use strict"
+
+var Database = require("../lib/Database.js")
+var EmailImporter = require("../lib/EmailImporter.js")
+
+var mboxPath = process.argv[2]
+var dbPath = process.argv[3]
+
+var db = new Database(dbPath)
+var importer = new EmailImporter(db)
+
+importer.importMboxFile(mboxPath, function (err) {
+  if (err) throw err
+})
