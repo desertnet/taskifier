@@ -1,0 +1,30 @@
+Return-Path: <eric@limulus.net>
+Received: from [192.168.0.160] (67-1-102-54.tcso.qwest.net. [67.1.102.54])
+        by mx.google.com with ESMTPSA id fk2sm40258987pab.10.2015.01.02.15.18.43
+        for <eric@limulus.net>
+        (version=TLSv1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Fri, 02 Jan 2015 15:18:44 -0800 (PST)
+From: Eric McCarthy <eric@limulus.net>
+Content-Type: multipart/alternative; boundary="Apple-Mail=_A66762F6-5925-49FE-9659-C2F4A7801F35"
+Subject: A Test Message :)
+Message-Id: <96A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>
+In-Reply-To: <76A01A9E-582B-42EC-8B56-FC8E3CB57571@limulus.net>
+Date: Fri, 2 Jan 2015 16:18:41 -0700
+To: Eric McCarthy <eric@limulus.net>
+Mime-Version: 1.0 (Mac OS X Mail 8.1 \(1993\))
+X-Mailer: Apple Mail (2.1993)
+
+
+--Apple-Mail=_A66762F6-5925-49FE-9659-C2F4A7801F35
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+  charset=us-ascii
+
+Hello there!
+--Apple-Mail=_A66762F6-5925-49FE-9659-C2F4A7801F35
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html;
+  charset=us-ascii
+
+<html><head><meta http-equiv="Content-Type" content="text/html charset=us-ascii"></head><body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" class=""><b class="">Hello there!</b></body></html>
+--Apple-Mail=_A66762F6-5925-49FE-9659-C2F4A7801F35--
