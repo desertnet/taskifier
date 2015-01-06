@@ -44,5 +44,13 @@ describe("Database", function () {
         })
       })
     })
+
+    it("should store thread info", function (done) {
+      db.threadFromEmailId(helloEmail.id(), function (err, thread) {
+        assert.ifError(err)
+        assert.deepEqual(thread.messageIds(), [helloEmail.id()])
+        return done()
+      })
+    })
   })
 })
