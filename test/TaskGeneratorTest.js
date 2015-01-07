@@ -7,6 +7,7 @@ var fs = require("fs")
 
 var Email = require("../lib/Email.js")
 var Database = require("../lib/Database.js")
+var Task = require("../lib/Task.js")
 var TaskGenerator = require("../lib/TaskGenerator.js")
 
 describe("TaskGenerator", function () {
@@ -43,7 +44,7 @@ describe("TaskGenerator", function () {
     it("should call newTask on the receiver object", function (done) {
       generator.taskifyEmail(helloEmail, function (err) {
         assert.ifError(err)
-        assert.ok(receiver.__newTaskWasCalled(), "new task not called on receiver")
+        receiver.assertNewTaskWasCalledCorrectly()
         return done()
       })
     })
@@ -60,12 +61,15 @@ describe("TaskGenerator", function () {
 
 function MockTaskReceiver () {
   this._newTaskWasCalled = false
+  this._theNewTask = null
 }
 
-MockTaskReceiver.prototype.newTask = function () {
+MockTaskReceiver.prototype.newTask = function (task) {
   this._newTaskWasCalled = true
+  this._theNewTask = task
 }
 
-MockTaskReceiver.prototype.__newTaskWasCalled = function () {
-  return this._newTaskWasCalled
+MockTaskReceiver.prototype.assertNewTaskWasCalledCorrectly = function () {
+  assert.ok(this._newTaskWasCalled, "newTask wasn't called")
+  assert.ok(this._theNewTask instanceof Task, "newTask wasn't called with Task obj")
 }
