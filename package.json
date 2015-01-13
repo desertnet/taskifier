@@ -20,7 +20,6 @@
     "temp": "^0.8.1"
   },
   "dependencies": {
-    "asana": "^0.4.2",
     "level": "^0.18.0",
     "mailparser": "^0.4.7",
     "node-mbox": "^0.1.0",
