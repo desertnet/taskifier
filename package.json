@@ -1,5 +1,5 @@
 {
-  "name": "email-to-task",
+  "name": "taskifier",
   "version": "0.0.1",
   "description": "Transparently turn emails sent to a support address into trackable tasks",
   "main": "index.js",
@@ -8,14 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/desertnet/email-to-task"
+    "url": "https://github.com/desertnet/taskifier"
   },
   "author": "Eric McCarthy <eric@limulus.net> (http://www.limulus.net/)",
-  "private": true,
   "bugs": {
-    "url": "https://github.com/desertnet/email-to-task/issues"
+    "url": "https://github.com/desertnet/taskifier/issues"
   },
-  "homepage": "https://github.com/desertnet/email-to-task",
+  "homepage": "https://github.com/desertnet/taskifier",
   "devDependencies": {
     "mocha": "^2.0.1",
     "temp": "^0.8.1"

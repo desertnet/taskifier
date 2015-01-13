@@ -1,4 +1,4 @@
-# email-to-task
+# taskifier
 
 Transparently turn emails sent to a support address into trackable tasks.
 
@@ -7,13 +7,13 @@ Transparently turn emails sent to a support address into trackable tasks.
 Note: attempting some README-Driven-Development here. This isn't actually implemented yet.
 
 ```javascript
-var emailToTask = require("email-to-task")
+var taskifier = require("taskifier")
 
-emailToTask.setLevelDBStoreFile("/path/to/leveldb/file")
+taskifier.setLevelDBStoreFile("/path/to/leveldb/file")
 
-var email = new emailToTask.Email(emailHeaderAndBody)
+var email = new taskifier.Email(emailHeaderAndBody)
 email.save(function (err) {…})
 
-var organizer = new emailToTask.EmailOrganizer()
+var organizer = new taskifier.EmailOrganizer()
 organizer.processEmail(email, function (err) {…})
 ```
