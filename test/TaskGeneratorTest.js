@@ -62,14 +62,17 @@ describe("TaskGenerator", function () {
 function MockTaskReceiver () {
   this._newTaskWasCalled = false
   this._theNewTask = null
+  this._newTaskCallback = null
 }
 
-MockTaskReceiver.prototype.newTask = function (task) {
+MockTaskReceiver.prototype.newTask = function (task, cb) {
   this._newTaskWasCalled = true
   this._theNewTask = task
+  this._newTaskCallback = cb
 }
 
 MockTaskReceiver.prototype.assertNewTaskWasCalledCorrectly = function () {
   assert.ok(this._newTaskWasCalled, "newTask wasn't called")
   assert.ok(this._theNewTask instanceof Task, "newTask wasn't called with Task obj")
+  assert.ok(this._newTaskCallback instanceof Function, "newTask was called with a callback")
 }
