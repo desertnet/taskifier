@@ -81,6 +81,16 @@ describe("Email", function () {
       })
     })
   })
+
+  describe("body()", function () {
+    it("should return a string represenation of the email body", function (done) {
+      email.initializeFromEmailText(helloEmail, function (err, email) {
+        assert.ifError(err)
+        assert.strictEqual(email.body(), "Hello there!")
+        return done()
+      })
+    })
+  })
 })
 
 function testFileData (name) {

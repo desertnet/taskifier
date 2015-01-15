@@ -25,6 +25,24 @@ describe("Task", function () {
       assert.strictEqual(task.name(), helloEmail.subject())
       return
     })
+
+    it("should return a Task object with a description that contains sender", function () {
+      task = Task.taskFromEmail(helloEmail)
+      assert.ok(
+        task.description().match(/\bEric McCarthy\b/),
+        "description doesn't contain 'Eric McCarthy'"
+      )
+      return
+    })
+
+    it("should return a Task object with a description that contains the body", function () {
+      task = Task.taskFromEmail(helloEmail)
+      assert.ok(
+        task.description().match(/Hello there!/),
+        "description doesn't contain 'Hello there!'"
+      )
+      return
+    })
   })
 })
 
