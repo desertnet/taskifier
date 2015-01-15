@@ -71,6 +71,16 @@ describe("Email", function () {
       })
     })
   })
+
+  describe("subject()", function () {
+    it("should return the value of the Subject header", function (done) {
+      email.initializeFromEmailText(helloEmail, function (err, email) {
+        assert.ifError(err)
+        assert.strictEqual(email.subject(), "A Test Message :)")
+        return done()
+      })
+    })
+  })
 })
 
 function testFileData (name) {
