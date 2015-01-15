@@ -18,9 +18,12 @@
   "homepage": "https://github.com/desertnet/taskifier",
   "devDependencies": {
     "mocha": "^2.0.1",
+    "portfinder": "^0.3.0",
+    "request": "^2.51.0",
     "temp": "^0.8.1"
   },
   "dependencies": {
+    "hapi": "^8.1.0",
     "level": "^0.18.0",
     "mailparser": "^0.4.7",
     "node-mbox": "^0.1.0",
