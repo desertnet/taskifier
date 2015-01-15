@@ -1,0 +1,16 @@
+{
+  "port": 8809,
+  "addr": "127.0.0.1",
+  "inboxes": {
+    "support": {
+      "database": "./taskifier-test-db.leveldb",
+      "taskReceivers": {
+        "taskifier-asana": {
+          "apiKey": "foo",
+          "workspaceId": 888,
+          "projectId": 999
+        }
+      }
+    }
+  }
+}

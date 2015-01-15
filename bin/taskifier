@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+
+"use strict"
+
+var taskifier = require("..")
+var nomnom = require("nomnom")
+var assert = require("assert")
+var fs = require("fs")
+
+var packageDotJSON = require("../package.json")
+var scriptName = packageDotJSON.name
+process.title = scriptName
+
+createCLIParser().parse()
+
+function createCLIParser () {
+  var cliOptionsParser = nomnom()
+    .script(scriptName)
+    .help("Subcomand usage: "+ scriptName +" help <command>")
+
+  cliOptionsParser.command("start")
+    .callback(handleSubcommand)
+    .help("Start a "+ scriptName +" server")
+    .option("config", {
+      required: true,
+      abbr: "f",
+      help: "Use a specific configuration file"
+    })
+
+  cliOptionsParser.command("version")
+    .callback(printVersionAndExit)
+    .help("Print version number and exit")
+
+  cliOptionsParser.command("help")
+    .callback(printUsageAndExit)
+    .help("Print usage information and exit")
+
+  return cliOptionsParser
+}
+
+function printVersionAndExit () {
+  var version = packageDotJSON.version
+  process.stdout.write(version + "\n")
+  process.exit(0)
+}
+
+function printUsageAndExit (opts) {
+  var newOpts = opts._.slice()
+  newOpts.shift()
+  newOpts.push("--help")
+  createCLIParser().parse(newOpts)
+}
+
+function handleSubcommand (opts) {
+  var command = opts[0]
+  if (command !== "start") { assert.fail() }
+
+  var config = JSON.parse(fs.readFileSync(opts.config).toString())
+  var server = taskifier.Server.serverFromConfiguration(config)
+  server.start(function (err) {
+    assert.ifError(err)
+  })
+}
