@@ -1,19 +1,55 @@
 # taskifier
 
-Transparently turn emails sent to a support address into trackable tasks.
+Turn emails sent to a support address into trackable tasks.
 
-## API
+## Why is this?
 
-Note: attempting some README-Driven-Development here. This isn't actually implemented yet.
+Support ticketing systems tend to be pretty terrible. They email your clients with messages marred with boilerplate and robotic-like ticket ID numbers, creating an impersonal wall between you and your clients. Why not have something that tracks your emails in the background and turns them into tasks when appropriate?
 
-```javascript
-var taskifier = require("taskifier")
+## What is this?
 
-taskifier.setLevelDBStoreFile("/path/to/leveldb/file")
+Taskifier is an HTTP server that you run in a secure location like your intranet. You can use, say, `procmail` and `curl` to notify the taskifier server of new messages. You set it up with a task receiver, like [taskifier-asana](https://github.com/desertnet/taskifier-asana), which will take the tasks created by taskifier and put them in the task manager you use.
 
-var email = new taskifier.Email(emailHeaderAndBody)
-email.save(function (err) {…})
+## Installation
 
-var organizer = new taskifier.EmailOrganizer()
-organizer.processEmail(email, function (err) {…})
 ```
+npm install taskifier
+```
+
+## Configuration
+
+You'll want a task receiver installed as well. How about `taskifier-asana`?
+
+```
+npm install taskifier-asana
+```
+
+Now set up a `config.json`. It might look something like this:
+
+```json
+{
+  "port": 8809,
+  "addr": "*",
+  "inboxes": {
+    "support": {
+      "database": "./taskifier-support.leveldb",
+      "taskReceivers": {
+        "taskifier-asana": {
+          "apiKey": "foo",
+          "workspaceId": 888,
+          "projectId": 999
+        }
+      }
+    }
+  }
+}
+```
+
+## Running
+
+Start the server:
+
+```
+./node_modules/taskifer/bin/taskifier start --config config.json
+```
+
