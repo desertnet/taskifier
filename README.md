@@ -50,6 +50,6 @@ Now set up a `config.json`. It might look something like this:
 Start the server:
 
 ```
-./node_modules/taskifer/bin/taskifier start --config config.json
+./node_modules/taskifier/bin/taskifier start --config config.json
 ```
 
