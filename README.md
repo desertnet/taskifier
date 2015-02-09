@@ -1,4 +1,4 @@
-# taskifier
+# taskifier [![Build Status](https://travis-ci.org/desertnet/taskifier.svg?branch=master)](https://travis-ci.org/desertnet/taskifier)
 
 Turn emails sent to a support address into trackable tasks.
 
