@@ -1,6 +1,6 @@
 {
   "name": "taskifier",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transparently turn emails sent to a support address into trackable tasks",
   "main": "index.js",
   "scripts": {
