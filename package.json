@@ -25,7 +25,7 @@
   "dependencies": {
     "hapi": "^8.1.0",
     "level": "^1.0.0",
-    "mailparser": "^0.4.7",
+    "mailparser": "^0.5.1",
     "node-mbox": "^0.1.0",
     "nomnom": "^1.8.1",
     "through2": "^0.6.3",
